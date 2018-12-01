@@ -51,14 +51,15 @@ for email in emails.email_id:
             exists = exists + 1
         else:
             ()
-        print(email,"\t"," :Valid Address ",valid_address,"\tValid Domain : ",valid_domain,"\tEmail Exists : ",email_exists)
         itr = itr+1
-        print("\n\nProcessed ",itr," out of ",emails.count()," All OK Count ",exists)
+        prct =  round((itr/emails.email_id.count())*100,2)
+        print("\n\n",prct,"% ","Processed.   ",itr," out of ",emails.email_id.count()," All OK Count ",exists)
+        print("Valid Address ",valid_address,"\tValid Domain : ",valid_domain,"\tEmail Exists : ",email_exists,"\t",email)
 
     except Exception as e:
         print("\nException occured for email id ",email)
         itr = itr+1
-        print("\n\nProcessed ",itr," out of ",emails.count())
+        print("\n\n",prct,"% ","Processed.   ",itr," out of ",emails.email_id.count()," All OK Count ",exists)
         
         
 print("Processing done.. ")
